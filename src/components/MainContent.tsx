@@ -124,7 +124,9 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 };
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  if (!project || !project.tr || !project.tr.bullets) {
+  const { language } = useLanguage();
+  
+  if (!project || !project[language] || !project[language].bullets) {
     console.error("Project data is missing:", project);
     return <div>Project data is missing</div>;
   }
@@ -137,10 +139,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
       className="group hover:bg-secondary/20 p-6 -mx-6 rounded-lg transition-colors"
     >
       <h3 className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors">
-        {project.tr.title}
+        {project[language].title}
       </h3>
       <ul className="mt-4 space-y-2 text-text-secondary">
-        {project.tr.bullets.map((bullet, i) => (
+        {project[language].bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
             <span className="text-accent mr-2">▹</span>
             {bullet.includes('<') ? (

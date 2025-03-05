@@ -10,6 +10,19 @@ export const metadata: Metadata = {
   description: "Personal portfolio website of Talha Esinti",
 };
 
+// Sayfa yenilendiğinde en başa atlamayı sağlayan bileşen
+const ScrollToTop = () => {
+  return (
+    <script dangerouslySetInnerHTML={{
+      __html: `
+        window.onload = function() {
+          window.scrollTo(0, 0);
+        }
+      `
+    }} />
+  );
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +35,7 @@ export default function RootLayout({
           name="viewport" 
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
+        <ScrollToTop />
       </head>
       <body>
         <LanguageProvider>

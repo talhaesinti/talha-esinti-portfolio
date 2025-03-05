@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import { useLanguage } from '@/context/LanguageContext';
 import { experiences, projects, education, skills, about, contact } from '@/data/content';
@@ -44,7 +44,7 @@ interface Project {
   tech: string[];
   links: {
     github: string;
-    live?: string;
+    live?: string | null;
     frontend?: string;
   };
 }
@@ -106,9 +106,9 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 };
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
 
-  if (!project || !project[language] || !project[language].bullets) {
+  if (!project || !project.tr || !project.tr.bullets) {
     console.error("Project data is missing:", project);
     return <div>Project data is missing</div>;
   }
@@ -121,10 +121,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
       className="group hover:bg-secondary/20 p-6 -mx-6 rounded-lg transition-colors"
     >
       <h3 className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors">
-        {project[language].title}
+        {project.tr.title}
       </h3>
       <ul className="mt-4 space-y-2 text-text-secondary">
-        {project[language].bullets.map((bullet, i) => (
+        {project.tr.bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
             <span className="text-accent mr-2">▹</span>
             {bullet.includes('<') ? (
@@ -227,7 +227,7 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
         className="overflow-hidden"
       >
         <ul className="space-y-2 text-base text-text-secondary pb-4">
-          {category.items.map((item, i) => (
+          {category.items.map((item: string, i: number) => (
             <li key={i} className="flex items-start">
               <span className="text-accent mr-2">▹</span>
               <span>{item}</span>
@@ -406,9 +406,6 @@ const MainContent = () => {
                       {education[language].school_rank}
                     </span>
                   </h3>
-                  <span className="text-base text-text-secondary">
-                    {education[language].location}
-                  </span>
                 </div>
                 <div className="flex items-baseline justify-between text-text-secondary">
                   <p className="text-base">

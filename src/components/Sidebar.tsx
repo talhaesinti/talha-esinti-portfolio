@@ -18,7 +18,6 @@ const socialIcons = {
 
 // Sosyal medya linklerini navigation.ts'den alıp ikonları ekleyelim
 const socialLinks = navSocialLinks.map(link => {
-  const iconName = link.icon.replace("Fa", "");
   return {
     ...link,
     icon: socialIcons[link.icon as keyof typeof socialIcons]

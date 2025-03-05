@@ -2,16 +2,15 @@
 
 import React, { createContext, useContext, useState } from 'react';
 
-type Language = 'tr' | 'en';
+// Language tipini doğrudan burada tanımlayalım
+type Language = 'en' | 'tr';
 
-type NavKeys = 'nav.about' | 'nav.skills' | 'nav.education' | 'nav.experience' | 'nav.projects' | 'nav.contact';
-
-// TranslationKey tipini genişletelim
-type TranslationKey = keyof typeof translations.tr;
+// Kullanılmayan 'NavKeys' ve 'TranslationKey' tiplerini kaldıralım
+// type NavKeys = keyof typeof navigationData.en.nav;
+// type TranslationKey = keyof typeof translations.tr;
 
 interface LanguageContextType {
   language: Language;
-  toggleLanguage: () => void;
   setLanguage: (lang: Language) => void;
 }
 
@@ -20,12 +19,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'tr' ? 'en' : 'tr');
-  };
-
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, setLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

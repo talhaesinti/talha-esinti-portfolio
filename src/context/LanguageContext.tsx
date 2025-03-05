@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState } from 'react';
 // Language tipini doğrudan burada tanımlayalım
 type Language = 'en' | 'tr';
 
-// Kullanılmayan 'NavKeys' ve 'TranslationKey' tiplerini kaldıralım
+// Kullanılmayan tipleri kaldıralım
 // type NavKeys = keyof typeof navigationData.en.nav;
 // type TranslationKey = keyof typeof translations.tr;
 

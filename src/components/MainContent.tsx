@@ -106,8 +106,6 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 };
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  // const { language } = useLanguage();
-
   if (!project || !project.tr || !project.tr.bullets) {
     console.error("Project data is missing:", project);
     return <div>Project data is missing</div>;

@@ -60,6 +60,24 @@ interface SkillCategoryProps {
   onToggle: () => void;
 }
 
+interface Reference {
+  id?: string;
+  en: {
+    name: string;
+    position: string;
+    institution: string;
+    contact: string;
+    quote: string;
+  };
+  tr: {
+    name: string;
+    position: string;
+    institution: string;
+    contact: string;
+    quote: string;
+  };
+}
+
 const ExperienceCard = ({ experience }: { experience: Experience }) => {
   const { language } = useLanguage();
   
@@ -199,8 +217,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
-  const { language } = useLanguage();
-  
   return (
     <motion.div
       initial={{ y: 20, opacity: 0 }}
@@ -237,7 +253,7 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
   );
 };
 
-const ReferenceCard = ({ reference }: { reference: any }) => {
+const ReferenceCard = ({ reference }: { reference: Reference }) => {
   const { language } = useLanguage();
   
   return (
@@ -262,7 +278,7 @@ const ReferenceCard = ({ reference }: { reference: any }) => {
       </div>
       
       <blockquote className="border-l-2 border-accent/30 pl-4 italic text-text-secondary">
-        "{reference[language].quote}"
+        &quot;{reference[language].quote}&quot;
       </blockquote>
     </motion.div>
   );

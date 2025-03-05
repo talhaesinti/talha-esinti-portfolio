@@ -2,20 +2,319 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a192f;
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent: #64ffda;
+  --background-light: #112240;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base Styles */
+@layer base {
+  html {
+    @apply scroll-smooth text-base md:text-[16px];
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-text-secondary text-lg antialiased;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text-primary font-bold mb-4 md:mb-6;
+  }
+
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  /* Metin Vurguları */
+  em {
+    @apply text-text-primary font-normal;
+  }
+
+  strong {
+    @apply text-text-primary font-semibold;
   }
 }
 
+/* Component Styles */
+@layer components {
+  /* Navigation */
+  .nav-link {
+    @apply transition-colors duration-200 hover:text-accent;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 border-2 border-accent text-accent 
+           hover:bg-accent/10 transition-colors rounded;
+  }
+
+  /* Cards */
+  .card {
+    @apply p-6 rounded-lg transition-colors duration-200;
+    background-color: rgba(17, 34, 64, 0.5);
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav-backdrop {
+    @apply fixed inset-0 backdrop-blur-sm;
+    background-color: rgba(10, 25, 47, 0.85);
+  }
+
+  /* Focus States */
+  .focus-ring {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Sidebar */
+  .sidebar-border {
+    @apply border-r;
+    border-color: rgba(136, 146, 176, 0.1);
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Custom Scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--background-light) var(--background);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-background-light rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+
+  /* Section Spacing */
+  .section-spacing {
+    @apply py-12 md:py-24;
+  }
+
+  /* Container Width */
+  .container-custom {
+    @apply w-full max-w-4xl mx-auto px-4 md:px-8;
+  }
+
+  /* Heading Styles */
+  .heading-1 {
+    @apply text-3xl md:text-d-4xl font-bold;
+  }
+
+  .heading-2 {
+    @apply text-2xl md:text-d-3xl font-bold;
+  }
+
+  .heading-3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  /* Card Spacing */
+  .card-spacing {
+    @apply space-y-4 md:space-y-6;
+  }
+
+  /* Text Content */
+  .text-content {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px] p-2;
+  }
+
+  body.menu-open {
+    @apply overflow-hidden fixed w-full h-full;
+  }
+
+  /* Reduce section padding */
+  .section-spacing {
+    @apply py-8;
+  }
+
+  /* Adjust card padding */
+  .card {
+    @apply p-4;
+  }
+
+  /* Reduce heading margins */
+  h1, h2, h3, h4, h5, h6 {
+    @apply mb-3;
+  }
+
+  /* Adjust list spacing */
+  .list-spacing > * + * {
+    @apply mt-3;
+  }
+
+  /* Navigation adjustments */
+  .mobile-nav-link {
+    @apply py-3 text-base;
+  }
+
+  /* Content spacing */
+  .content-spacing {
+    @apply space-y-4;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #112240;
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64ffda;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Hide scrollbar on mobile menu open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Improved tap targets */
+@media (max-width: 768px) {
+  .mobile-nav-link {
+    @apply py-3;
+  }
+  
+  button, 
+  a {
+    @apply min-h-[44px] min-w-[44px] relative;
+  }
+
+  /* Larger touch targets for social icons */
+  .social-icon {
+    @apply p-2;
+  }
+}
+
+/* Smooth animations */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Better focus states */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-[var(--background)];
+}
+
+/* Better touch targets */
+@media (max-width: 768px) {
+  a, button {
+    padding: 0.5rem;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.75rem 0;
+  }
+}
+
+/* Hide scrollbar when menu is open */
+body.menu-open::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .ring-accent {
+    @apply ring-2 ring-[var(--accent)];
+  }
+}
+
+/* Default text size for other sections */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-text-secondary text-lg; /* 18px */
+  background-color: var(--background);
+}
+
+/* Mobil scroll ve overflow kontrolü */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 }

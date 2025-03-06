@@ -113,7 +113,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
         {experience.tech.map((tech, i) => (
           <span 
             key={i} 
-            className="px-1.5 py-0.5 text-[10px] md:text-sm font-medium bg-tech-tag text-accent rounded-full"
+            className="px-1.5 py-0.5 text-[10px] md:text-sm font-medium bg-tech-tag text-accent rounded-full md:px-2.5 md:py-0.5"
           >
             {tech}
           </span>
@@ -208,7 +208,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         {project.tech.map((tech, i) => (
           <span 
             key={i} 
-            className="px-1.5 py-0.5 text-[10px] md:text-xs font-medium bg-tech-tag text-accent rounded-full"
+            className="px-1.5 py-0.5 text-[10px] md:text-sm font-medium bg-tech-tag text-accent rounded-full md:px-2.5 md:py-0.5"
           >
             {tech}
           </span>
@@ -293,26 +293,26 @@ const MainContent = () => {
   return (
     <main className="flex-1 md:ml-[350px]">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
-        <section id="about" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="about" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-10"
+            className="space-y-6 md:space-y-8"
           >
             <div className="md:hidden mb-12 pt-10">
-              <h1 className="text-2xl md:text-4xl font-bold text-text-primary">
+              <h1 className="text-2xl md:text-3xl font-bold text-text-primary">
                 Talha Esinti
               </h1>
-              <h2 className="text-lg md:text-2xl text-text-secondary mt-1 md:mt-2">
+              <h2 className="text-lg md:text-xl text-text-secondary mt-1 md:mt-2">
                 {navigationData[language].header.role}
               </h2>
-              <p className="text-xs md:text-base text-text-secondary/80 mt-1 md:mt-2">
+              <p className="text-xs md:text-sm text-text-secondary/80 mt-1 md:mt-2">
                 {navigationData[language].header.subtitle}
               </p>
             </div>
             
-            <div className="space-y-4 md:space-y-8 text-sm md:text-lg text-text-secondary/70 leading-relaxed">
+            <div className="space-y-4 md:space-y-6 text-sm md:text-base text-text-secondary/70 leading-relaxed">
               {about[language]?.greeting && (
                 <HTMLContent 
                   html={about[language].greeting} 

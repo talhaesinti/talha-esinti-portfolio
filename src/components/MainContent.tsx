@@ -86,34 +86,34 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="group hover:bg-secondary/20 p-2 md:p-3 -mx-2 md:-mx-3 rounded-lg transition-colors"
+      className="group hover:bg-secondary/20 p-2 md:p-4 -mx-2 md:-mx-5 rounded-lg transition-colors"
     >
-      <div className="flex items-baseline gap-1 text-xs md:text-sm text-text-secondary">
+      <div className="flex items-baseline gap-1 text-xs md:text-base text-text-secondary">
         <span>{experience[language].date}</span>
       </div>
-      <h3 className="text-base md:text-lg font-semibold text-text-primary mt-1 md:mt-2 group-hover:text-accent transition-colors">
+      <h3 className="text-base md:text-xl font-semibold text-text-primary mt-1 md:mt-2 group-hover:text-accent transition-colors">
         {experience[language].position} · <span className="text-accent">{experience[language].company}</span>
       </h3>
-      <ul className="mt-2 md:mt-3 space-y-1 md:space-y-2 text-text-secondary">
+      <ul className="mt-2 md:mt-4 space-y-1 md:space-y-3 text-text-secondary">
         {experience[language].bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
-            <span className="text-accent mr-1 md:mr-2 text-xs md:text-sm flex-shrink-0">▹</span>
+            <span className="text-accent mr-1 md:mr-2 text-xs md:text-base flex-shrink-0">▹</span>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
-                className="text-xs md:text-sm leading-relaxed [&_strong]:text-text-primary [&_strong]:font-semibold [&_em]:italic" 
+                className="text-xs md:text-base leading-relaxed [&_strong]:text-text-primary [&_strong]:font-semibold [&_em]:italic" 
               />
             ) : (
-              <span className="text-xs md:text-sm leading-relaxed">{bullet}</span>
+              <span className="text-xs md:text-base leading-relaxed">{bullet}</span>
             )}
           </li>
         ))}
       </ul>
-      <div className="flex flex-wrap gap-1 md:gap-1.5 mt-2 md:mt-3">
+      <div className="flex flex-wrap gap-1 md:gap-2 mt-2 md:mt-4">
         {experience.tech.map((tech, i) => (
           <span 
             key={i} 
-            className="px-1.5 py-0.5 text-[10px] md:text-xs font-medium bg-tech-tag text-accent rounded-full"
+            className="px-1.5 py-0.5 text-[10px] md:text-sm font-medium bg-tech-tag text-accent rounded-full"
           >
             {tech}
           </span>
@@ -136,22 +136,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="group hover:bg-secondary/20 p-2 md:p-4 -mx-2 md:-mx-4 rounded-lg transition-colors"
+      className="group hover:bg-secondary/20 p-2 md:p-5 -mx-2 md:-mx-5 rounded-lg transition-colors"
     >
-      <h3 className="text-base md:text-lg font-semibold text-text-primary group-hover:text-accent transition-colors">
+      <h3 className="text-base md:text-xl font-semibold text-text-primary group-hover:text-accent transition-colors">
         {project[language].title}
       </h3>
-      <ul className="mt-2 md:mt-3 space-y-1 md:space-y-1.5 text-text-secondary">
+      <ul className="mt-2 md:mt-4 space-y-1 md:space-y-2 text-text-secondary">
         {project[language].bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
             <span className="text-accent mr-1 md:mr-2">▹</span>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
-                className="text-xs md:text-sm leading-relaxed [&_strong]:text-text-primary [&_strong]:font-semibold [&_em]:italic [&_a]:text-accent [&_a]:underline [&_a]:hover:text-accent/80" 
+                className="text-xs md:text-base leading-relaxed [&_strong]:text-text-primary [&_strong]:font-semibold [&_em]:italic [&_a]:text-accent [&_a]:underline [&_a]:hover:text-accent/80" 
               />
             ) : (
-              <span className="text-xs md:text-sm leading-relaxed">{bullet}</span>
+              <span className="text-xs md:text-base leading-relaxed">{bullet}</span>
             )}
           </li>
         ))}
@@ -227,12 +227,12 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
     >
       <button
         onClick={onToggle}
-        className="w-full py-1.5 md:py-2 flex items-center justify-between text-left hover:bg-secondary/10 transition-colors"
+        className="w-full py-1.5 md:py-3 flex items-center justify-between text-left hover:bg-secondary/10 transition-colors"
       >
-        <h3 className="text-xs md:text-sm font-medium text-text-primary">
+        <h3 className="text-xs md:text-base font-medium text-text-primary">
           {category.title}
         </h3>
-        <span className={`text-accent transition-transform ${isOpen ? 'rotate-180' : ''} text-xs md:text-sm`}>
+        <span className={`text-accent transition-transform ${isOpen ? 'rotate-180' : ''} text-xs md:text-base`}>
           ▼
         </span>
       </button>
@@ -242,7 +242,7 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <ul className="space-y-1 md:space-y-1.5 text-xs md:text-sm text-text-secondary pb-2 md:pb-3">
+        <ul className="space-y-1 md:space-y-2 text-xs md:text-base text-text-secondary pb-2 md:pb-4">
           {category.items.map((item: string, i: number) => (
             <li key={i} className="flex items-start">
               <span className="text-accent mr-1 md:mr-2">▹</span>
@@ -263,23 +263,23 @@ const ReferenceCard = ({ reference }: { reference: Reference }) => {
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="group hover:bg-secondary/20 p-2 md:p-4 -mx-2 md:-mx-4 rounded-lg transition-colors"
+      className="group hover:bg-secondary/20 p-2 md:p-5 -mx-2 md:-mx-5 rounded-lg transition-colors"
     >
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 md:mb-3">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 md:mb-4">
         <div>
-          <h3 className="text-base md:text-lg font-semibold text-text-primary group-hover:text-accent transition-colors">
+          <h3 className="text-base md:text-xl font-semibold text-text-primary group-hover:text-accent transition-colors">
             {reference[language].name}
           </h3>
-          <p className="text-xs md:text-sm text-text-secondary">
+          <p className="text-xs md:text-base text-text-secondary">
             {reference[language].position}, {reference[language].institution}
           </p>
         </div>
-        <p className="text-[10px] md:text-xs text-text-secondary mt-1 md:mt-0">
+        <p className="text-[10px] md:text-sm text-text-secondary mt-1 md:mt-0">
           {reference[language].contact}
         </p>
       </div>
       
-      <blockquote className="border-l-2 border-accent/30 pl-2 md:pl-3 italic text-xs md:text-sm text-text-secondary">
+      <blockquote className="border-l-2 border-accent/30 pl-2 md:pl-4 italic text-xs md:text-base text-text-secondary">
         &quot;{reference[language].quote}&quot;
       </blockquote>
     </motion.div>
@@ -293,26 +293,26 @@ const MainContent = () => {
   return (
     <main className="flex-1 md:ml-[350px]">
       <div className="max-w-4xl mx-auto px-4 md:px-8">
-        <section id="about" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="about" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
             <div className="md:hidden mb-12 pt-10">
-              <h1 className="text-2xl md:text-3xl font-bold text-text-primary">
+              <h1 className="text-2xl md:text-4xl font-bold text-text-primary">
                 Talha Esinti
               </h1>
-              <h2 className="text-lg md:text-xl text-text-secondary mt-1 md:mt-2">
+              <h2 className="text-lg md:text-2xl text-text-secondary mt-1 md:mt-2">
                 {navigationData[language].header.role}
               </h2>
-              <p className="text-xs md:text-sm text-text-secondary/80 mt-1 md:mt-2">
+              <p className="text-xs md:text-base text-text-secondary/80 mt-1 md:mt-2">
                 {navigationData[language].header.subtitle}
               </p>
             </div>
             
-            <div className="space-y-4 md:space-y-6 text-sm md:text-base text-text-secondary/70 leading-relaxed">
+            <div className="space-y-4 md:space-y-8 text-sm md:text-lg text-text-secondary/70 leading-relaxed">
               {about[language]?.greeting && (
                 <HTMLContent 
                   html={about[language].greeting} 
@@ -403,43 +403,43 @@ const MainContent = () => {
           </motion.div>
         </section>
 
-        <section id="education" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="education" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
-            <h2 className="text-xl md:text-3xl font-bold text-accent">
+            <h2 className="text-xl md:text-4xl font-bold text-accent">
               {educationData.title[language]}
             </h2>
-            <div className="space-y-4 md:space-y-6 border-l-2 border-accent/20 pl-3 md:pl-4">
-              <div className="space-y-1 md:space-y-2">
+            <div className="space-y-4 md:space-y-8 border-l-2 border-accent/20 pl-3 md:pl-5">
+              <div className="space-y-1 md:space-y-3">
                 <div className="flex items-baseline justify-between">
-                  <h3 className="text-lg md:text-xl font-semibold text-text-primary">
+                  <h3 className="text-lg md:text-2xl font-semibold text-text-primary">
                     {education[language].school}
-                    <span className="text-base text-text-secondary ml-2">
+                    <span className="text-base md:text-lg text-text-secondary ml-2">
                       {education[language].school_rank}
                     </span>
                   </h3>
                 </div>
                 <div className="flex items-baseline justify-between text-text-secondary">
-                  <p className="text-xs md:text-base">
+                  <p className="text-xs md:text-lg">
                     {education[language].degree} · {education[language].gpa}
                   </p>
-                  <p className="text-xs md:text-base">{education[language].date}</p>
+                  <p className="text-xs md:text-lg">{education[language].date}</p>
                 </div>
               </div>
               
-              <div className="mt-4 md:mt-8">
-                <h4 className="text-sm md:text-base font-semibold text-accent mb-2 md:mb-4">
+              <div className="mt-4 md:mt-10">
+                <h4 className="text-sm md:text-lg font-semibold text-accent mb-2 md:mb-5">
                   {education[language].coursework.title}
                 </h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
                   {education[language].coursework.courses.map((course, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-accent mr-1 md:mr-2 text-xs md:text-base">▹</span>
-                      <span className="text-xs md:text-base text-text-secondary">{course}</span>
+                      <span className="text-accent mr-1 md:mr-2 text-xs md:text-lg">▹</span>
+                      <span className="text-xs md:text-lg text-text-secondary">{course}</span>
                     </li>
                   ))}
                 </ul>
@@ -448,17 +448,17 @@ const MainContent = () => {
           </motion.div>
         </section>
 
-        <section id="experience" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="experience" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
-            <h2 className="text-xl md:text-3xl font-bold text-accent">
+            <h2 className="text-xl md:text-4xl font-bold text-accent">
               {experienceData.title[language]}
             </h2>
-            <div className="space-y-6 md:space-y-12">
+            <div className="space-y-6 md:space-y-14">
               {experiences.map((exp, index) => (
                 <ExperienceCard key={index} experience={exp} />
               ))}
@@ -466,15 +466,15 @@ const MainContent = () => {
           </motion.div>
         </section>
 
-        <section id="projects" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="projects" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
-            <h2 className="text-xl md:text-3xl font-bold text-accent">{projectsData.title[language]}</h2>
-            <div className="space-y-6 md:space-y-12">
+            <h2 className="text-xl md:text-4xl font-bold text-accent">{projectsData.title[language]}</h2>
+            <div className="space-y-6 md:space-y-14">
               {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
@@ -482,17 +482,17 @@ const MainContent = () => {
           </motion.div>
         </section>
 
-        <section id="references" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="references" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
-            <h2 className="text-xl md:text-3xl font-bold text-accent">
+            <h2 className="text-xl md:text-4xl font-bold text-accent">
               {referencesData.title[language]}
             </h2>
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-6 md:space-y-10">
               {referencesData.data.map((reference, index) => (
                 <ReferenceCard key={index} reference={reference} />
               ))}
@@ -500,28 +500,28 @@ const MainContent = () => {
           </motion.div>
         </section>
 
-        <section id="contact" className="md:py-24 py-10 md:scroll-mt-0 scroll-mt-32">
+        <section id="contact" className="md:py-28 py-10 md:scroll-mt-0 scroll-mt-32">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-10"
           >
-            <h2 className="text-xl md:text-3xl font-bold text-accent">
+            <h2 className="text-xl md:text-4xl font-bold text-accent">
               {contact[language].title}
             </h2>
-            <p className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-text-secondary text-sm md:text-xl leading-relaxed max-w-2xl">
               {contact[language].description}
             </p>
-            <div className="mt-4 md:mt-8">
+            <div className="mt-4 md:mt-10">
               <a 
                 href="mailto:talha.esinti@gmail.com" 
-                className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 border border-accent text-accent hover:bg-accent/10 transition-all rounded text-xs md:text-sm font-medium tracking-wide"
+                className="inline-flex items-center px-4 md:px-8 py-2 md:py-4 border border-accent text-accent hover:bg-accent/10 transition-all rounded text-xs md:text-base font-medium tracking-wide"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <span>{contact[language].button}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 ml-1 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-5 md:w-5 ml-1 md:ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>

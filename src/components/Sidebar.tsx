@@ -138,7 +138,7 @@ const Sidebar = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="flex items-center text-accent hover:brightness-110 transition-colors py-2"
                   >
-                    <span className="text-lg tracking-widest font-mono">
+                    <span className="text-base tracking-widest font-mono">
                       {item.displayName}
                     </span>
                   </Link>

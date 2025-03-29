@@ -15,7 +15,7 @@ export const skillsData = {
       },
       {
         title: 'Tools & Technologies',
-        items: ['Git', 'Postman', 'REST APIs', 'PostgreSQL', 'SQL', 'DigitalOcean', 'Vercel', 'Chrome DevTools']
+        items: ['Git', 'Postman', 'REST APIs', 'PostgreSQL', 'DigitalOcean', 'Vercel', 'Chrome DevTools']
       },
       {
         title: 'Specializations',
@@ -61,7 +61,7 @@ export const skillsData = {
       },
       {
         title: 'Araçlar & Teknolojiler',
-        items: ['Git', 'Postman', 'REST APIs', 'PostgreSQL', 'SQL', 'DigitalOcean', 'Vercel', 'Chrome DevTools']
+        items: ['Git', 'Postman', 'REST APIs', 'PostgreSQL', 'DigitalOcean', 'Vercel', 'Chrome DevTools']
       },
       {
         title: 'Uzmanlık Alanları',

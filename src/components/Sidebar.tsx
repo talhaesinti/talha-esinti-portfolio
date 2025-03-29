@@ -155,18 +155,21 @@ const Sidebar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-accent transition-colors"
+                  className="text-text-secondary hover:text-accent transition-duration-0"
+                  style={{ transitionDuration: '0s' }}
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
                 </a>
               ))}
             </div>
-            <button 
-              className="w-full px-4 py-2 border border-accent text-accent hover:bg-accent/10 transition-colors rounded text-sm font-mono"
+            <a 
+              href="/talha-esinti-cv.pdf" 
+              download="Talha_Esinti_CV.pdf"
+              className="w-full px-4 py-2 border border-accent text-accent bg-background hover:bg-accent/10 transition-all rounded text-sm font-mono shadow-[0_6px_0_0_rgba(100,255,218,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(100,255,218,0.5)] active:translate-y-2 active:shadow-[0_2px_0_0_rgba(100,255,218,0.4)] text-center block"
             >
               {navigationData[language].cv.download}
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
@@ -225,18 +228,21 @@ const Sidebar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-accent transition-colors p-2"
+                  className="text-text-secondary hover:text-accent p-2 transition-duration-0"
+                  style={{ transitionDuration: '0s' }}
                   aria-label={social.label}
                 >
                   <social.icon size={18} />
                 </a>
               ))}
             </div>
-            <button 
-              className="w-full px-3 py-2 border border-accent text-accent hover:bg-accent/10 transition-colors rounded text-xs font-mono"
+            <a 
+              href="/talha-esinti-cv.pdf" 
+              download="Talha_Esinti_CV.pdf"
+              className="w-full px-3 py-2 border border-accent text-accent bg-background hover:bg-accent/10 transition-all rounded text-xs font-mono shadow-[0_6px_0_0_rgba(100,255,218,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(100,255,218,0.5)] active:translate-y-2 active:shadow-[0_2px_0_0_rgba(100,255,218,0.4)] text-center block"
             >
               {navigationData[language].cv.download}
-            </button>
+            </a>
           </div>
         </div>
       </aside>

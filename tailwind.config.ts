@@ -12,7 +12,7 @@ const config: Config = {
         "background": "var(--background)",        
         "background-light": "var(--background-light)",
         'tech-bg': 'rgba(45, 212, 191, 0.15)',
-        'tech-tag': 'rgba(20, 184, 166, 0.2)',
+        'tech-tag': 'rgba(20, 184, 166, 0.1)',
       },
       fontSize: {
         // Mobil öncelikli yaklaşım

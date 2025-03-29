@@ -97,7 +97,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
       <ul className="mt-2 md:mt-4 space-y-1 md:space-y-3 text-text-secondary">
         {experience[language].bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
-            <span className="text-accent mr-1 md:mr-2 text-xs md:text-base flex-shrink-0">▹</span>
+            <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px] flex-shrink-0">▶</span>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
@@ -144,7 +144,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <ul className="mt-2 md:mt-4 space-y-1 md:space-y-2 text-text-secondary">
         {project[language].bullets.map((bullet, i) => (
           <li key={i} className="flex items-start">
-            <span className="text-accent mr-1 md:mr-2">▹</span>
+            <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
@@ -245,7 +245,7 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
         <ul className="space-y-1 md:space-y-2 text-xs md:text-base text-text-secondary pb-2 md:pb-4">
           {category.items.map((item: string, i: number) => (
             <li key={i} className="flex items-start">
-              <span className="text-accent mr-1 md:mr-2">▹</span>
+              <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
               <span>{item}</span>
             </li>
           ))}
@@ -380,7 +380,7 @@ const MainContent = () => {
                   <ul className="space-y-2 text-sm text-text-secondary">
                     {category.items.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-accent mr-2">▹</span>
+                        <span className="text-accent mr-2 text-[8px] md:text-[10px]">▶</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -438,7 +438,7 @@ const MainContent = () => {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
                   {education[language].coursework.courses.map((course, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-accent mr-1 md:mr-2 text-xs md:text-lg">▹</span>
+                      <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
                       <span className="text-xs md:text-lg text-text-secondary">{course}</span>
                     </li>
                   ))}
@@ -516,7 +516,7 @@ const MainContent = () => {
             <div className="mt-4 md:mt-10">
               <a 
                 href="mailto:talha.esinti@gmail.com" 
-                className="inline-flex items-center px-4 md:px-8 py-2 md:py-4 border border-accent text-accent hover:bg-accent/10 transition-all rounded text-xs md:text-base font-medium tracking-wide"
+                className="inline-flex items-center px-4 md:px-8 py-2 md:py-4 border border-accent text-accent bg-background hover:bg-accent/10 transition-all rounded text-xs md:text-base font-medium tracking-wide shadow-[0_6px_0_0_rgba(100,255,218,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_0_0_rgba(100,255,218,0.5)] active:translate-y-2 active:shadow-[0_2px_0_0_rgba(100,255,218,0.4)]"
                 rel="noopener noreferrer"
                 target="_blank"
               >

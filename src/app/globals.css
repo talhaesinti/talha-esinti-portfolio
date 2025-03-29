@@ -4,7 +4,7 @@
 
 /* CSS Variables */
 :root {
-  --background: #0a192f;
+  --background: #0D172A;
   --text-primary: #ccd6f6;
   --text-secondary: #8892b0;
   --accent: #64ffda;
@@ -57,13 +57,13 @@
   /* Cards */
   .card {
     @apply p-6 rounded-lg transition-colors duration-200;
-    background-color: rgba(17, 34, 64, 0.5);
+    background-color: rgba(13, 23, 42, 0.7);
   }
 
   /* Mobile Navigation */
   .mobile-nav-backdrop {
     @apply fixed inset-0 backdrop-blur-sm;
-    background-color: rgba(10, 25, 47, 0.85);
+    background-color: rgba(13, 23, 42, 0.9);
   }
 
   /* Focus States */
@@ -209,7 +209,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a192f;
+  background: #0D172A;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -234,8 +234,13 @@ html {
 }
 
 /* Smooth transitions */
-* {
+*:not(a[aria-label]) {
   @apply transition-colors duration-200;
+}
+
+/* Social media icons - instant hover */
+a[aria-label] {
+  transition-duration: 0s !important;
 }
 
 /* Mobile menu styles */

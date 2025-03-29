@@ -96,8 +96,13 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
       </h3>
       <ul className="mt-2 md:mt-4 space-y-1 md:space-y-3 text-text-secondary">
         {experience[language].bullets.map((bullet, i) => (
-          <li key={i} className="flex items-start">
-            <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px] flex-shrink-0">▶</span>
+          <li key={i} className="flex items-baseline gap-2">
+            <svg 
+              viewBox="0 0 6 6" 
+              className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+            >
+              <path d="M0 0L6 3L0 6Z" />
+            </svg>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
@@ -143,8 +148,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </h3>
       <ul className="mt-2 md:mt-4 space-y-1 md:space-y-2 text-text-secondary">
         {project[language].bullets.map((bullet, i) => (
-          <li key={i} className="flex items-start">
-            <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
+          <li key={i} className="flex items-baseline gap-2">
+            <svg 
+              viewBox="0 0 6 6" 
+              className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+            >
+              <path d="M0 0L6 3L0 6Z" />
+            </svg>
             {bullet.includes('<') ? (
               <HTMLContent 
                 html={bullet} 
@@ -244,8 +254,13 @@ const SkillCategory = ({ category, isOpen, onToggle }: SkillCategoryProps) => {
       >
         <ul className="space-y-1 md:space-y-2 text-xs md:text-base text-text-secondary pb-2 md:pb-4">
           {category.items.map((item: string, i: number) => (
-            <li key={i} className="flex items-start">
-              <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
+            <li key={i} className="flex items-baseline gap-2">
+              <svg 
+                viewBox="0 0 6 6" 
+                className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+              >
+                <path d="M0 0L6 3L0 6Z" />
+              </svg>
               <span>{item}</span>
             </li>
           ))}
@@ -379,8 +394,13 @@ const MainContent = () => {
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     {category.items.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-accent mr-2 text-[8px] md:text-[10px]">▶</span>
+                      <li key={i} className="flex items-baseline gap-2">
+                        <svg 
+                          viewBox="0 0 6 6" 
+                          className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+                        >
+                          <path d="M0 0L6 3L0 6Z" />
+                        </svg>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -437,8 +457,13 @@ const MainContent = () => {
                 </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
                   {education[language].coursework.courses.map((course, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-accent mr-1 md:mr-2 text-[8px] md:text-[10px]">▶</span>
+                    <li key={index} className="flex items-baseline gap-2">
+                      <svg 
+                        viewBox="0 0 6 6" 
+                        className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+                      >
+                        <path d="M0 0L6 3L0 6Z" />
+                      </svg>
                       <span className="text-xs md:text-lg text-text-secondary">{course}</span>
                     </li>
                   ))}

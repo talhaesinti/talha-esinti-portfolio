@@ -42,7 +42,7 @@ interface Project {
     bullets: string[];
   };
   tech: string[];
-  links: {
+  links?: {
     github: string;
     live?: string | null;
     frontend?: string;

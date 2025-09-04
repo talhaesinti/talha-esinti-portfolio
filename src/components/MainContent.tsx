@@ -358,6 +358,12 @@ const MainContent = () => {
                   className="[&_strong]:text-text-primary [&_strong]:font-semibold" 
                 />
               )}
+              {about[language]?.paragraph4 && (
+                <HTMLContent 
+                  html={about[language].paragraph4} 
+                  className="[&_strong]:text-text-primary [&_strong]:font-semibold" 
+                />
+              )}
               {about[language]?.conclusion && (
                 <HTMLContent 
                   html={about[language].conclusion} 
@@ -450,9 +456,32 @@ const MainContent = () => {
                   <p className="text-xs md:text-lg">{education[language].date}</p>
                 </div>
               </div>
+              {/* Education Notes / Research Bullets */}
+              {Array.isArray((education as any)[language]?.bullets) && (education as any)[language].bullets.length > 0 && (
+                <ul className="mt-3 md:mt-5 space-y-1 md:space-y-3 text-text-secondary">
+                  {(education as any)[language].bullets.map((bullet: string, i: number) => (
+                    <li key={i} className="flex items-baseline gap-2">
+                      <svg
+                        viewBox="0 0 6 6"
+                        className="w-2 h-2 md:w-2.5 md:h-2.5 flex-shrink-0 fill-accent mt-[0.3rem]"
+                      >
+                        <path d="M0 0L6 3L0 6Z" />
+                      </svg>
+                      {bullet.includes('<') ? (
+                        <HTMLContent
+                          html={bullet}
+                          className="text-xs md:text-base leading-relaxed [&_strong]:text-text-primary [&_strong]:font-semibold [&_em]:italic"
+                        />
+                      ) : (
+                        <span className="text-xs md:text-base leading-relaxed">{bullet}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
               
               <div className="mt-4 md:mt-10">
-                <h4 className="text-sm md:text-lg font-semibold text-accent mb-2 md:mb-5">
+                <h4 className="text-xs md:text-base font-semibold text-accent mb-2 md:mb-5">
                   {education[language].coursework.title}
                 </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
@@ -464,7 +493,7 @@ const MainContent = () => {
                       >
                         <path d="M0 0L6 3L0 6Z" />
                       </svg>
-                      <span className="text-xs md:text-lg text-text-secondary">{course}</span>
+                      <span className="text-[10px] md:text-sm text-text-secondary">{course}</span>
                     </li>
                   ))}
                 </ul>

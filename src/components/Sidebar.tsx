@@ -40,14 +40,7 @@ const Sidebar = () => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.name);
       const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
       
-      // Sayfa sonuna yakınsa, son sekmeyi aktif et
-      if (scrollPosition + windowHeight >= documentHeight - 100) {
-        setActiveSection(sections[sections.length - 1]); // Son sekme (contact)
-        return;
-      }
       
       // Normal scroll algılama
       for (const section of sections.reverse()) {
@@ -148,7 +141,7 @@ const Sidebar = () => {
           </nav>
 
           <div className="mt-auto mb-8 space-y-6">
-            <div className="flex items-center justify-start space-x-5">
+            <div className="flex items-center justify-center space-x-5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -221,7 +214,7 @@ const Sidebar = () => {
 
           {/* Alt Kısım: Sosyal Medya ve CV */}
           <div className="mt-auto pt-10 pb-6">
-            <div className="flex items-center justify-between mb-6 w-full">
+            <div className="flex items-center justify-center gap-6 mb-6 w-full">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}

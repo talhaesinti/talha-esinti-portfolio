@@ -33,7 +33,7 @@ export const skillsData = {
         title: 'DevOps & Security',
         items: [
           'CI/CD Pipelines',
-          'Server Management (DigitalOcean, Vercel)',
+          'Cloud & Server Management (DigitalOcean, Vercel)',
           'REST API Architecture',
           'Web Security (CORS, CSRF, XSS, JWT)'
         ]
@@ -79,7 +79,7 @@ export const skillsData = {
         title: 'DevOps & Güvenlik',
         items: [
           'CI/CD Pipelines',
-          'Sunucu Yönetimi (DigitalOcean, Vercel)',
+          'Bulut & Sunucu Yönetimi (DigitalOcean, Vercel)',
           'REST API Mimarisi',
           'Web Güvenliği (CORS, CSRF, XSS, JWT)'
         ]

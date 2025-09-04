@@ -70,6 +70,4 @@ export const navItems = [
 export const socialLinks = [
   { icon: "FaGithub", href: "https://github.com/talhaesinti", label: "GitHub" },
   { icon: "FaLinkedin", href: "https://linkedin.com/in/talha-esinti", label: "LinkedIn" },
-  { icon: "FaMedium", href: "https://medium.com/@talhaesinti", label: "Medium" },
-  { icon: "FaYoutube", href: "https://youtube.com/@talhaesinti", label: "YouTube" }
 ]; 

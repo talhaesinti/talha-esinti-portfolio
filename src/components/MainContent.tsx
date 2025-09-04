@@ -457,9 +457,9 @@ const MainContent = () => {
                 </div>
               </div>
               {/* Education Notes / Research Bullets */}
-              {Array.isArray((education as any)[language]?.bullets) && (education as any)[language].bullets.length > 0 && (
+              {Array.isArray(education[language]?.bullets) && education[language].bullets.length > 0 && (
                 <ul className="mt-3 md:mt-5 space-y-1 md:space-y-3 text-text-secondary">
-                  {(education as any)[language].bullets.map((bullet: string, i: number) => (
+                  {education[language].bullets.map((bullet: string, i: number) => (
                     <li key={i} className="flex items-baseline gap-2">
                       <svg
                         viewBox="0 0 6 6"

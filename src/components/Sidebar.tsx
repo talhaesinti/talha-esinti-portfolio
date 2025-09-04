@@ -39,7 +39,6 @@ const Sidebar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.name);
-      const scrollPosition = window.scrollY;
       
       
       // Normal scroll algılama

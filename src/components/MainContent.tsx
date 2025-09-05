@@ -434,25 +434,25 @@ const MainContent = () => {
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="space-y-6 md:space-y-10"
+            className="space-y-3 md:space-y-6"
           >
             <h2 className="text-xl md:text-4xl font-bold text-accent">
               {educationData.title[language]}
             </h2>
-            <div className="space-y-4 md:space-y-8 border-l-2 border-accent/20 pl-3 md:pl-5">
-              <div className="space-y-1 md:space-y-3">
+            <div className="space-y-1 md:space-y-2 border-l-2 border-accent/20 pl-3 md:pl-5">
+              <div className="space-y-0">
                 <div className="flex items-baseline justify-between">
-                  <h3 className="text-lg md:text-2xl font-semibold text-text-primary">
+                  <h3 className="text-lg md:text-2xl font-semibold text-text-primary leading-tight">
                     {education[language].school}
-                    <span className="text-base md:text-lg text-text-secondary ml-2">
-                      {education[language].school_rank}
-                    </span>
+                    {education[language].school_rank && (
+                      <span className="text-base md:text-lg text-text-secondary ml-2">
+                        {education[language].school_rank}
+                      </span>
+                    )}
                   </h3>
                 </div>
-                <div className="flex items-baseline justify-between text-text-secondary">
-                  <p className="text-xs md:text-lg">
-                    {education[language].degree} · {education[language].gpa}
-                  </p>
+                <div className="flex items-baseline gap-2 md:gap-4 text-text-secondary -mt-1 md:-mt-1.5">
+                  <p className="text-xs md:text-lg">{education[language].degree}</p>
                   <p className="text-xs md:text-lg">{education[language].date}</p>
                 </div>
               </div>
@@ -480,11 +480,11 @@ const MainContent = () => {
                 </ul>
               )}
               
-              <div className="mt-4 md:mt-10">
-                <h4 className="text-xs md:text-base font-semibold text-accent mb-2 md:mb-5">
+              <div className="mt-10 md:mt-16">
+                <h4 className="text-xs md:text-base font-semibold text-accent mt-3 md:mt-6 mb-2 md:mb-5">
                   {education[language].coursework.title}
                 </h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-5">
                   {education[language].coursework.courses.map((course, index) => (
                     <li key={index} className="flex items-baseline gap-2">
                       <svg 

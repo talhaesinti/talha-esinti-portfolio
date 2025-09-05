@@ -4,6 +4,33 @@ export const experienceData = {
     tr: 'Deneyim'
   },
   data: {
+    disastech: {
+      en: {
+        position: 'Senior Frontend Developer',
+        company: 'Disastech',
+        date: 'May 2025 — September 2025 (4 months)',
+        location: 'Istanbul, Turkey',
+        bullets: [
+          "<strong>Led the frontend development</strong> of a large-scale Disaster Management System for Sabancı (<strong>Turkey’s 2nd-largest holding, first enterprise client</strong>), covering <strong>live maps</strong>, reporting, messaging, and multi-channel SMS.",
+          "Built a scalable <strong>Next.js + TypeScript</strong> core with modular context/service layers, unified API handling, and standardized error/retry flows.",
+          "<strong>Collaborated with backend teams</strong> to define API contracts, streamline workflows, and drive reusable UI/UX patterns (maps, tables, filters, validation).",
+          "Improved performance with dynamic imports, skeleton loading, <strong>socket lifecycle</strong> management, and optimized <strong>Leaflet</strong> rendering for <strong>real-time operations</strong>."
+        ]
+      },
+      tr: {
+        position: 'Senior Frontend Developer',
+        company: 'Disastech',
+        date: 'Mayıs 2025 — Eylül 2025 (4 ay)',
+        location: 'İstanbul, Türkiye',
+        bullets: [
+          "<strong>Sabancı Holding</strong> için geniş ölçekli bir Afet Yönetim Sistemi’nin frontend geliştirmesine <strong>liderlik ettim</strong>; <strong>canlı haritalar</strong>, raporlama, mesajlaşma ve çok kanallı SMS gibi çekirdek modüllerin geliştirilmesini yönettim.",
+          "Ölçeklenebilir bir <strong>Next.js + TypeScript</strong> tabanlı altyapı geliştirdim; modüler context/service katmanları, birleşik API yönetimi ve standartlaştırılmış hata/tekrar akışlarıyla sürdürülebilirliği sağladım.",
+          "<strong>Backend ekipleriyle işbirliği yaparak</strong> API entegrasyonlarını netleştirdim, veri akışlarını optimize ettim ve haritalar, tablolar, filtreler, doğrulama gibi yeniden kullanılabilir UI/UX bileşenlerini geliştirdim.",
+          "Dinamik importlar, skeleton yükleme, <strong>socket</strong> yaşam döngüsü yönetimi ve <strong>Leaflet</strong> render’ını  <strong>gerçek zamanlı</strong> operasyonlar için optimize ederek performansı iyileştirdim."
+        ]
+      },
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Context API', 'Leaflet Map Operations', 'Socket IO Client', 'REST API', 'Git', 'Chrome DevTools', 'Postman', 'JWT-based Authentication', 'Web Security (CORS, CSRF, XSS)']
+    },
     optdcom: {
       en: {
         position: 'Frontend Developer',
@@ -11,7 +38,7 @@ export const experienceData = {
         date: 'February 2024 — February 2025 (1 years)',
         location: 'Istanbul, Turkey',
         bullets: [
-          "<strong>Led the development</strong> of a <strong>React-based</strong> brochure management platform for <strong>Migros</strong> integrating RBAC and workflow automation.",
+          "<strong>Led the development</strong> of a <strong>React-based</strong> brochure management platform for Migros (<strong>Turkey’s largest supermarket chain</strong>) integrating RBAC and workflow automation.",
           "Architected a <strong>component-based frontend system</strong>, developing scalable admin panels and <strong>modular UI components</strong>.",
           "Refined <strong>API interactions</strong>, collaborating with backend teams to boost <strong>data retrieval efficiency</strong>, reducing redundant API calls.",
           "Collaborated closely with <strong>cross-functional teams</strong> to shape product development, contributing technical insights, proposing feature ideas, and enhancing workflow automation and UI/UX for a large-scale enterprise system."
